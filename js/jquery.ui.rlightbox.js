@@ -457,9 +457,14 @@ $.extend($.ui.rlightbox, {
 				$( window ).bind( "resize.rlightbox", $.proxy(this.liveResize, this) );
 
 				// keyboard navigation
-				$( document ).keyup( $.proxy(this.handleKeyboard, this) );			
+				$( document ).keyup( $.proxy(this.handleKeyboard, this) );	
+				
 			}
+			$(".ui-lightbox-content img").click(function(){
+					$(".ui-lightbox-content").hide();
+				})
 		},
+		
 
 		getOptimalSize: function( size, number ) {
 
@@ -1830,7 +1835,7 @@ $.extend($.ui.rlightbox, {
 			} else {
 
 				// keep the line height – prevent counter from popping up in the title line
-				$lb.title.append( "&nbsp;" );
+				$lb.title.append( " " );
 			}
 		},
 
